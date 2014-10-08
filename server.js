@@ -39,7 +39,9 @@ app.get('/',function(req,res){
 //RESTful route
 var router = express.Router(); 
 
+/*its Route middleware, */
 router.use(function(req, res, next) {
+    
     console.log(req.method, req.url);
     next();	
 });
@@ -142,7 +144,7 @@ curut2.get(function(req,res,next){
             res.render('edit',{title:"Edit user",data:rows});
         });
         
-        //console.log(query.sql);
+        //console.log(query.sql)
     });
        
 });
@@ -218,6 +220,7 @@ curut2.delete(function(req,res){
      });
 });
 
+//now we need to apply our router here
 app.use('/api', router);
 
 //start Server

@@ -25,7 +25,7 @@ app.use(
         user     : 'root',
         password : '',
         database : 'test',
-        debug    :true
+        debug    : false //set true if you wanna see debug logger
     },'request')
 
 );
@@ -39,7 +39,14 @@ app.get('/',function(req,res){
 //RESTful route
 var router = express.Router(); 
 
-/*its Route middleware, */
+
+/*------------------------------------------------------  
+*  This is router middleware,invoked everytime 
+*  we hit url /api and anything after /api 
+*  like /api/user , /api/user/7 
+*  we can use this for doing validation,authetication
+*  for every route started with /api
+--------------------------------------------------------*/
 router.use(function(req, res, next) {
     
     console.log(req.method, req.url);
@@ -48,7 +55,8 @@ router.use(function(req, res, next) {
 
 var curut = router.route('/user');
 
-//show the CRUD interface
+
+//show the CRUD interface | GET
 curut.get(function(req,res){
     
     
@@ -72,7 +80,7 @@ curut.get(function(req,res){
     });
      
 });
-
+//post data to DB | POST
 curut.post(function(req,res){
     
     //validation
@@ -119,6 +127,20 @@ curut.post(function(req,res){
 
 //now for Single route (GET,DELETE,PUT)
 var curut2 = router.route('/user/:user_id');
+
+/*------------------------------------------------------
+route.all is extremely useful. you can use it to do
+stuffs for specific routes. for example you need to do 
+a validation everytime route /api/user/:user_id it hit.
+
+remove curut2.all() if you dont want it
+------------------------------------------------------*/
+curut2.all(function(req,res,next){
+    
+    console.log("You need to smth about curut2 Route ? Do it here");
+    console.log(req.params);
+    next();
+});
 
 //get data to update 
 curut2.get(function(req,res,next){

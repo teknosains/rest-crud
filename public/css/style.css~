@@ -1,5 +1,0 @@
-body{background:#fff;width:100%}
-ul.err-area li{color:red}
-.data-table{float:left;display:inline-block}
-.data-table table{border-collapse:collapse;border:1px solid #ddd;width:60%}
-.page-data{float:left;display:inline-block;width:60%}

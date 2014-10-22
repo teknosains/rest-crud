@@ -24,7 +24,7 @@ app.use(
         host     : 'localhost',
         user     : 'root',
         password : '',
-        database : 'xd',
+        database : 'test',
         debug    : false //set true if you wanna see debug logger
     },'request')
 

@@ -55,7 +55,7 @@ var curut = router.route('/user');
 
 
 //show the CRUD interface | GET
-curut.get(function(req,res){
+curut.get(function(req,res,next){
 
 
     req.getConnection(function(err,conn){
@@ -77,7 +77,7 @@ curut.get(function(req,res){
 
 });
 //post data to DB | POST
-curut.post(function(req,res){
+curut.post(function(req,res,next){
 
     //validation
     req.assert('name','Name is required').notEmpty();
@@ -162,7 +162,7 @@ curut2.get(function(req,res,next){
 });
 
 //update data
-curut2.put(function(req,res){
+curut2.put(function(req,res,next){
     var user_id = req.params.user_id;
 
     //validation
@@ -204,7 +204,7 @@ curut2.put(function(req,res){
 });
 
 //delete data
-curut2.delete(function(req,res){
+curut2.delete(function(req,res,next){
 
     var user_id = req.params.user_id;
 

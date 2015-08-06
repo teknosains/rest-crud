@@ -8,7 +8,7 @@ Installation,Live DEMO, and tutorial here : http://teknosains.com/i/simple-crud-
 	npm install
 
 ## Configuration (database)
-app.js
+server.js
 
         host: 'localhost',
         user: 'root',

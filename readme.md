@@ -5,7 +5,8 @@ Installation,Live DEMO, and tutorial here : http://teknosains.com/i/simple-crud-
 ## Installation
 *for newbies : Clone or download zip to your machine then hit this :
 
-	npm install
+$ cd rest-crud
+rest-crud$ npm install
 
 ## Configuration (database)
 server.js

@@ -23,3 +23,7 @@ server.js
 
 	
 You're gonna need to create a DB named 'test' or whatever you name it,  import t_user.sql
+
+
+## Open your Browser
+And type: localhost:3000/api/user
